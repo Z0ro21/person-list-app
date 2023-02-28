@@ -1,0 +1,68 @@
+<div class="main-container">
+    <div class="form-container">
+        <form [formGroup]="personForm">
+
+            <div class="row">
+                <mat-form-field class="input-full-width">
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput formControlName="name" placeholder="My name">
+                    <mat-error *ngIf="personForm.controls['name'].hasError('required')">
+                        Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field class="input-full-width">
+                    <mat-label>Last Name</mat-label>
+                    <input type="text" matInput formControlName="lastName" placeholder="My name">
+                    <mat-error *ngIf="personForm.controls['lastName'].hasError('required')">
+                        Last Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="row multi-col">
+                <mat-form-field class="input-half-width">
+                    <mat-label>Age</mat-label>
+                    <input type="number" matInput formControlName="age" placeholder="My name">
+                    <mat-error *ngIf="personForm.controls['age'].hasError('required')">
+                        Age is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="input-half-width">
+                    <mat-label>Location</mat-label>
+                    <input type="text" matInput formControlName="location" placeholder="My name">
+                    <mat-error *ngIf="personForm.controls['location'].hasError('required')">
+                        Location is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="row right-align">
+                <button class="add-button" mat-stroked-button color="primary" (click)="addPerson()">Add</button>
+            </div>
+        </form>
+    </div>
+
+    <ng-container *ngIf="personList.length">
+        <div class="list-container">
+            <mat-list>
+                <div mat-subheader>Persons</div>
+                <mat-list-item class="list-element" *ngFor="let person of personList; index as i;">
+                    <mat-icon matListItemIcon>person</mat-icon>
+                    <span matListItemLine><strong>Full Name:</strong> {{person.name}} {{person.lastName}}</span>
+                    <span matListItemLine><strong>Age:</strong> {{person.age}} <strong>Location:</strong>
+                        {{person.location}}</span>
+                    <button mat-button color="warn" (click)="deletePerson(i)">Remove</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </div>
+
+        <div class="button-container">
+            <button mat-raised-button color="primary" (click)="openConfirmDialog()">Next</button>
+        </div>
+    </ng-container>
+</div>

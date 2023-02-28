@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('person-list-app');
   });
 
-  it('should render title', () => {
+  it('should render router outlet', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('person-list-app app is running!');
+    expect(compiled.getElementsByTagName('router-outlet').length).toBe(1);
   });
 });

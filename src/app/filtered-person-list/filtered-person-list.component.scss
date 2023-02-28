@@ -1,0 +1,15 @@
+$large-spacer: 16px;
+
+.button-container {
+    padding: 0 $large-spacer;
+}
+
+.two-col-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.col {
+    width: calc(50% - $large-spacer);
+}

@@ -1,0 +1,52 @@
+$medium-spacer: 8px;
+$large-spacer: 16px;
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-container {
+    padding: $medium-spacer;
+
+    display: flex;
+    justify-content: center;
+
+    .add-button {
+        align-self: flex-end;
+    }
+}
+
+.input-full-width {
+    width: 100%;
+    max-width: 800px;
+}
+
+.input-half-width {
+    box-sizing: border-box;
+    max-width: 450px;
+    width: calc(50% - $medium-spacer);
+}
+
+.list-container {
+    padding: $medium-spacer $large-spacer;
+}
+
+.main-container {
+    padding: $large-spacer;
+}
+
+.row {
+    width: 100%;
+
+    &.multi-col {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &.right-align {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+

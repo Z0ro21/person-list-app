@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Min allowed access age</h1>
+
+<div mat-dialog-content class="body-dialog">
+    <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input type="number" matInput [formControl]="accessAgeControl" placeholder="My name">
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+    <button class="cancel-button" mat-button [mat-dialog-close]="null">Cancel</button>
+    <button class="add-button" mat-stroked-button color="primary" (click)="confirmAction()" cdkFocusInitial>Ok</button>
+</div>

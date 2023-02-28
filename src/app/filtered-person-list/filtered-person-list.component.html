@@ -1,0 +1,30 @@
+<div class="two-col-container">
+    <div class="col">
+        <mat-list>
+            <div mat-subheader>Allowed persons</div>
+            <mat-list-item class="list-element" *ngFor="let person of allowedPersonList">
+                <mat-icon matListItemIcon>person</mat-icon>
+                <span matListItemLine><strong>Full Name:</strong> {{person.name}} {{person.lastName}}</span>
+                <span matListItemLine><strong>Age:</strong> {{person.age}} <strong>Location:</strong>
+                    {{person.location}}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </mat-list>
+    </div>
+    <div class="col">
+        <mat-list>
+            <div mat-subheader>Denied persons</div>
+            <mat-list-item class="list-element" *ngFor="let person of deniedPersonList">
+                <mat-icon matListItemIcon>person</mat-icon>
+                <span matListItemLine><strong>Full Name:</strong> {{person.name}} {{person.lastName}}</span>
+                <span matListItemLine><strong>Age:</strong> {{person.age}} <strong>Location:</strong>
+                    {{person.location}}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </mat-list>
+    </div>
+</div>
+
+<div class="button-container">
+    <button mat-raised-button color="primary" routerLink="/persons">Return</button>
+</div>
